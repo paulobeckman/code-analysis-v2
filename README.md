@@ -28,30 +28,27 @@ Code Analysis é um projeto que visa ter a implementação de conceitos de Copil
 
 ### Visualização
 
-##### Visualize a aplicação web aqui: [Code Analysis](https://code-analysis.netlify.app/)
-
-### Backlog e Desenvolvimento do Projeto
-
-##### Visualize aqui: [Projeto Code Analysis](https://github.com/users/paulobeckman/projects/1)
+##### Visualize a aplicação web aqui: [Code Analysis](https://code-analysis-v2.netlify.app/)
 
 ### Códigos Principais
 
-- **Gramatica - Analisador Sintático:** O código responsável por realizar a análise léxica, encontra-se [aqui](https://github.com/paulobeckman/code-analysis-v2/blob/development/src/utils/lexicalAnalyzer.ts). Esse código é executado, quando se insere um valor [no input dessa página](https://code-analysis.netlify.app):
+- **Gramatica - Analisador Sintático:** O código responsável por realizar a analisador sintático, encontra-se [aqui](https://github.com/paulobeckman/code-analysis-v2/blob/main/src/pages/Grammar/index.tsx), mais especificamente na linha 17 na função `handleTestClick`. Esse código é executado, quando se insere um valor [no input dessa página](https://code-analysis-v2.netlify.app/) e clica em testar gramática:
 
-  <img alt="code-analysis" title="#code-analysis" src="./github-assets/lexicalAnalyzer.png" width="800px">
-<br/>
+    <img alt="code-analysis" title="#code-analysis" src="./github-assets/analisador-sintatico.png" width="800px">
+
+  A gramática está nesse arquivo [grammar.ne](https://github.com/paulobeckman/code-analysis-v2/blob/main/src/utils/grammar/grammar.ne) e para copilar essa gramatica foi utilizado a biblioteca [nearley](https://nearley.js.org/) e o comando `npx nearleyc grammar.ne -o grammar.js`, com isso gerando o arquivo [grammar.js](https://github.com/paulobeckman/code-analysis-v2/blob/main/src/utils/grammar/grammar.js). Além disso, para gerar o diagrama foi utilizado o comando `npx nearley-railroad grammar.ne -o grammar.html` gerando o arquivo [grammar.html](https://github.com/paulobeckman/code-analysis-v2/blob/main/src/utils/grammar/grammar.html).
+  <br/>
 
 ## 🛠 Tecnologias
 
 As seguintes ferramentas estão sendo usadas na construção do projeto:
 
-- [Typescript][ts]
-- [ReactJS][react]
-- [ViteJS][vitejs]
-- [NodeJS][nodejs]
-- [Tailwindcss][tailwind]
-- [React Hook Form][react-hook-form]
-- [React Router][react-router]
+- [Typescript][ts]: É um superconjunto sintático estrito de JavaScript e adiciona tipagem estática opcional à linguagem.
+- [ReactJS][react]: Bibioteca para desenvolvimento com javascript/typescript.
+- [ViteJS][vitejs]: Deixa os processor de iniciar a aplicação localmente mais rápido.
+- [NodeJS][nodejs]: Permite rodar javascript localmente.
+- [Tailwindcss][tailwind]: Estilização da aplicação
+- [React Router][react-router]: Utilizado por definir as rotas da aplicação
 
 ## 🚀 Como rodar este projeto
 
@@ -67,14 +64,14 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode][vsco
 
 ```bash
 # Clone o Repositorio
-$ git clone https://github.com/paulobeckman/code-analysis.git
+$ git clone https://github.com/paulobeckman/code-analysis-v2.git
 ```
 
 ### 💻 Rode o Project Web
 
 ```bash
 # Vá para a pasta do projeto
-$ cd code-analysis
+$ cd code-analysis-v2
 
 # Instale as depedencias
 $ npm install
